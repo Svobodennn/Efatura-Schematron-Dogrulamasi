@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.1.xsd">
+    
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>TR1.2</cbc:CustomizationID>
+    <cbc:ProfileID>EARSIVFATURA</cbc:ProfileID>
+    <cbc:ID>FIT2023000000001</cbc:ID>
+    <cbc:UUID>550e8400-e29b-41d4-a716-446655440000</cbc:UUID>
+    <cbc:IssueDate>2023-12-15</cbc:IssueDate>
+    <cbc:IssueTime>14:42:00</cbc:IssueTime>
+    <cbc:InvoiceTypeCode>SATIS</cbc:InvoiceTypeCode>
+    <cbc:DocumentCurrencyCode>TRY</cbc:DocumentCurrencyCode>
+    <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+    
+    <!-- Satıcı Bilgileri -->
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cbc:WebsiteURI>www.ornekfirma.com</cbc:WebsiteURI>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="VKN">1234567890</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>ÖRNEK FİRMA A.Ş.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Örnek Sokak</cbc:StreetName>
+                <cbc:BuildingNumber>1</cbc:BuildingNumber>
+                <cbc:CitySubdivisionName>Merkez</cbc:CitySubdivisionName>
+                <cbc:CityName>İSTANBUL</cbc:CityName>
+                <cbc:PostalZone>34000</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:Name>Türkiye</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cac:TaxScheme>
+                    <cbc:Name>ÖRNEK VD</cbc:Name>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    
+    <!-- Alıcı Bilgileri -->
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="TCKN">12345678901</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:Person>
+                <cbc:FirstName>Ahmet</cbc:FirstName>
+                <cbc:FamilyName>Yılmaz</cbc:FamilyName>
+            </cac:Person>
+            <cac:PostalAddress>
+                <cbc:StreetName>Müşteri Sokak</cbc:StreetName>
+                <cbc:BuildingNumber>2</cbc:BuildingNumber>
+                <cbc:CitySubdivisionName>Kadıköy</cbc:CitySubdivisionName>
+                <cbc:CityName>İSTANBUL</cbc:CityName>
+                <cbc:PostalZone>34700</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:Name>Türkiye</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    
+    <!-- Fatura Kalemi -->
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="TRY">1000.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>Örnek Ürün</cbc:Name>
+            <cbc:Description>Örnek ürün açıklaması</cbc:Description>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="TRY">1000.00</cbc:PriceAmount>
+        </cac:Price>
+        <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="TRY">180.00</cbc:TaxAmount>
+            <cac:TaxSubtotal>
+                <cbc:TaxableAmount currencyID="TRY">1000.00</cbc:TaxableAmount>
+                <cbc:TaxAmount currencyID="TRY">180.00</cbc:TaxAmount>
+                <cbc:Percent>18</cbc:Percent>
+                <cac:TaxCategory>
+                    <cac:TaxScheme>
+                        <cbc:Name>KDV</cbc:Name>
+                        <cbc:TaxTypeCode>0015</cbc:TaxTypeCode>
+                    </cac:TaxScheme>
+                </cac:TaxCategory>
+            </cac:TaxSubtotal>
+        </cac:TaxTotal>
+    </cac:InvoiceLine>
+    
+    <!-- Fatura Toplamları -->
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="TRY">180.00</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="TRY">1000.00</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="TRY">1000.00</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="TRY">1180.00</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="TRY">1180.00</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+</Invoice> 
